@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react"
+import { useState, ChangeEvent, SubmitEvent } from "react"
 
 
 export default function ContactForm() {
@@ -10,8 +10,8 @@ export default function ContactForm() {
         setForm({...form, [e.target.name] : e.target.value})
     }
 
-    const handleSubmit = async (e : FormEvent<HTMLFormElement>) => {
-        e.preventdefault()
+    const handleSubmit = async (e : SubmitEvent<HTMLFormElement>) => {
+        e.preventDefault()
         setStatus("submitting")
 
         try {
@@ -27,14 +27,48 @@ export default function ContactForm() {
         setStatus("error")
         }
     }
+
     return (
-        <form 
-        onSubmit={handleSubmit} 
-        className="flex flex-col gap-4 max-w-lg ">
-            <input type="text" name="Name" value={form.name} onChange={handleChange} placeholder="John Doe"/>
-            <input type="text" name="Email" value={form.email} onChange={handleChange} placeholder="johndoe@gmail.com"/>
-            <textarea name="Message" value={form.message} onChange={handleChange} />
-            <button type="submit">Submit</button>
+        <form
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-4 w-full max-w-lg"
+        >
+            <input
+            type="text"
+            name="name"
+            value={form.name}
+            onChange={handleChange}
+            placeholder="John Doe"
+            required
+            className="bg-[#1c2128] border border-[#373e47] rounded-md px-4 py-3 placeholder-[#636e7b] focus:outline-none focus:border-[#539bf5] focus:ring-1 focus:ring-[#539bf5] transition-colors"
+            />
+
+            <input
+            type="email"
+            name="email"
+            value={form.email}
+            onChange={handleChange}
+            placeholder="johndoe@gmail.com"
+            required
+            className="bg-[#1c2128] border border-[#373e47] rounded-md px-4 py-3 placeholder-[#636e7b] focus:outline-none focus:border-[#539bf5] focus:ring-1 focus:ring-[#539bf5] transition-colors"
+            />
+
+            <textarea
+            name="message"
+            value={form.message}
+            onChange={handleChange}
+            placeholder="What's on your mind?"
+            required
+            rows={5}
+            className="bg-[#1c2128] border border-[#373e47] rounded-md px-4 py-3 placeholder-[#636e7b] focus:outline-none focus:border-[#539bf5] focus:ring-1 focus:ring-[#539bf5] transition-colors resize-none"
+            />
+
+            <button
+            type="submit"
+            className="bg-[#539bf5] hover:bg-[#4184e4] font-medium rounded-md px-4 py-3 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+            Submit
+            </button>
         </form>
-    )
+    )   
 }

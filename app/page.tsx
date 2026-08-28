@@ -8,7 +8,7 @@ import ContactForm from "@/components/ContactForm"
 export default function Home() {
   return (
     <main className="bg-[#1c2128] min-h-screen w-full text-[#FDFBF7] flex flex-col">
-      <div className="flex-1">
+      <div className="flex-1 mb-30">
         <section className="flex items-center justify-center">
             <div className="flex-1 flex flex-col justify-center items-center gap-6">
               <div className="flex items-baseline">
