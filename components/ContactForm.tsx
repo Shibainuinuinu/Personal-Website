@@ -1,6 +1,6 @@
 "use client";
 import { useState, ChangeEvent, SubmitEvent } from "react"
-
+import Elliptical from "./Elipitcal";
 
 export default function ContactForm() {
     const [form, setForm] = useState({ name: "", email: "", message: ""})
@@ -24,7 +24,7 @@ export default function ContactForm() {
         setStatus( res.ok ? "sent" : "error")
         if (res.ok) { setForm({ name: "", email: "", message: ""})}
         } catch {
-        setStatus("error")
+            setStatus("error")
         }
     }
 
@@ -63,12 +63,28 @@ export default function ContactForm() {
             className="bg-[#1c2128] border border-[#373e47] rounded-md px-4 py-3 placeholder-[#636e7b] focus:outline-none focus:border-[#539bf5] focus:ring-1 focus:ring-[#539bf5] transition-colors resize-none"
             />
 
+            {status === "sent" && (
+            <div className="bg-green-500/10 border border-green-500/30 text-green-400 rounded-md px-4 py-3 text-sm">
+                Your message has been sent — I&apos;ll get back to you soon.
+            </div>
+            )}
+
+            {status === "error" && (
+            <div className="bg-red-500/10 border border-red-500/30 text-red-400 rounded-md px-4 py-3 text-sm">
+                Something went wrong. Please try again, or email me directly at kelvinfang15@gmail.com.
+            </div>
+            )}
+            
             <button
             type="submit"
+            disabled={status == "submitting"}
             className="bg-[#539bf5] hover:bg-[#4184e4] font-medium rounded-md px-4 py-3 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-            Submit
+                {status === "submitting" ? (
+                <>Sending<Elliptical status={status} text={"..."} time={10} /></>
+                ) : "Submit"}
             </button>
+
         </form>
     )   
 }
