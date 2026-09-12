@@ -23,6 +23,5 @@
 
 /* Cleaner baseline that lets Tailwind handle the typography families smoothly */
 body {
-  background: var(--background);
   color: var(--foreground);
 }

@@ -1,12 +1,33 @@
-
 import Link from 'next/link'
+import { GitHubIcon, LinkedInIcon, ResumeIcon } from "@/data/Icons";
 
 export default function Nav() {
-    return (
-        <nav className="text-white sticky top-0 z-50 w-full bg-[#22272e] flex justify-start h-15">
-            <Link className="ml-5 mt-3 padding-10 text-xl" href="/">Home</Link>
-            <Link className="ml-5 mt-3 padding-10 text-xl" href="/About">About Me</Link>
-            <Link className="ml-5 mt-3 padding-10 text-xl" href="Contacts">Contacts</Link>
-        </nav>
-    )
+  return (
+    <nav className="text-white top-0 z-50 flex mr-15 py-8 justify-end h-10 border-b border-white/5">
+      <Link
+        className="flex items-center gap-2 text-lg hover:text-[#7da99e] px-5 text-[#a0a8bb] transition-all duration-200"
+        href="https://github.com/Shibainuinuinu"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <GitHubIcon /> Github
+      </Link>
+
+      <Link
+        className="flex items-center gap-2 text-lg hover:text-[#7da99e] px-5 text-[#a0a8bb] transition-all duration-200"
+        href="https://www.linkedin.com/in/fang-kelvin/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <LinkedInIcon /> LinkedIn
+      </Link>
+
+      <Link
+        className="flex items-center gap-2 text-lg hover:text-[#7da99e] px-5 text-[#a0a8bb] transition-all duration-200"
+        href="Resume"
+      >
+        <ResumeIcon /> Resume
+      </Link>
+    </nav>
+  );
 }

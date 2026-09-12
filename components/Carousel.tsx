@@ -23,7 +23,7 @@ export default function Carousel({ Items } : { Items: CarouselItem[] }) {
             }`}
             >
             <Image src={item.image} height={100} width={200} alt={item.title} />
-            </  div>
+            </div>
         ))}
         </div>
         <p>{Items[selected].description}</p>

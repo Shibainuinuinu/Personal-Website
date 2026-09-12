@@ -78,11 +78,11 @@ export default function ContactForm() {
             <button
             type="submit"
             disabled={status == "submitting"}
-            className="bg-[#539bf5] hover:bg-[#4184e4] font-medium rounded-md px-4 py-3 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="bg-[#7DA99E] hover:opacity-85 text-[#0B0D13] font-medium rounded-md px-4 py-3 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             >
                 {status === "submitting" ? (
                 <>Sending<Elliptical status={status} text={"..."} time={10} /></>
-                ) : "Submit"}
+                ) : "Send Message"}
             </button>
 
         </form>
