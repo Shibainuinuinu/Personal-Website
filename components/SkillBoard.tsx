@@ -9,7 +9,7 @@ export default function SkillBoard( { skillCategories }  : { skillCategories : S
                 skillCategories.map(({category, skills} : {category : string, skills: Skill[]}) => {
                     return (
                         <div className="flex flex-col justify-start gap-5" key={category}>
-                            <h1 className="border-b border-white/5 py-1">{category}</h1>
+                            <h1 className="border-b border-white/20 py-1">{category}</h1>
                             <div className="flex gap-3"> 
                                 {skills.map((skill, id) => {
                                     return (

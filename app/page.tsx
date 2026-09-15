@@ -57,11 +57,11 @@ export default function Home() {
           </section>
       </div>
 
-      <div id="contacts" className="flex flex-col justify-center items-center w-full py-6">
-        <span className="text-4xl mt-5 mb-10">Contact Me</span> 
+      <div id="contacts" className="flex flex-col justify-center items-center w-full mb-20">
+        <span className="text-4xl mb-10 mt-30">Contact Me</span> 
         <ContactForm />
       </div>
-      <footer className="border-t border-white/5 py-6 flex justify-start">
+      <footer className="border-t border-white/20 py-6 flex justify-start">
         <span className="ml-10">
           Kelvin Fang 
         </span>
