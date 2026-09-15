@@ -4,6 +4,8 @@ import Image from "next/image"
 import Carousel from "@/components/Carousel"
 import { projects } from "@/data/projects"
 import ContactForm from "@/components/ContactForm"
+import SkillBoard from "@/components/SkillBoard";
+import { skillCategories } from "@/data/skills";
 
 export default function Home() {
   const scrollIntoView = (id : string) => {
@@ -44,6 +46,14 @@ export default function Home() {
               Projects
             </div>
             <Carousel Items={projects} />
+          </section>
+          
+
+          <section className="mt-60 flex flex-col justify-center items-center">
+            <div className="text-5xl mt-10 mb-30 text-center">
+              Skills
+            </div>
+            <SkillBoard skillCategories={skillCategories}/>
           </section>
       </div>
 
