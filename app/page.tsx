@@ -29,7 +29,7 @@ export default function Home() {
                     <span className="animate-pulse bold text-5xl">|</span>
                   </div>
                   <p className="max-w-prose text-left text-[#a0a8bb]">
-                    Third-year Computer Science student at UC Santa Barbara specializing in machine learning and deep learning. 
+                    Third-year Computer Science student at UC Santa Barbara specializing in AI/ML and Fullstack development. 
                   </p>
                   <div className="flex gap-5">
                     <button onClick={() => scrollIntoView('projects')} className="bg-[#7DA99E] transition-all duration-200 hover:opacity-85 px-5 py-2.5 rounded-md text-[#0B0D13] text-sm transition-all duration-200">View Projects</button>
