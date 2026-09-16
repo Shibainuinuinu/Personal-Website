@@ -1,12 +1,12 @@
 "use client";
 import Type from "@/components/Type"
-import Image from "next/image"
 import Carousel from "@/components/Carousel"
 import { projects } from "@/data/projects"
 import ContactForm from "@/components/ContactForm"
 import SkillBoard from "@/components/SkillBoard";
 import { skillCategories } from "@/data/skills";
 import Reveal from "@/components/Reveal";
+import PhotoCollage from "@/components/PhotoCollage";
 
 export default function Home() {
   const scrollIntoView = (id : string) => {
@@ -19,7 +19,7 @@ export default function Home() {
     <main className="min-h-screen w-full text-[#E8EAF0] flex flex-col">
       <div className="flex-1 mb-30">
         <Reveal>
-          <section className="flex items-center justify-center">
+          <section className="flex items-center justify-center mt-20">
               <div className="flex-1 flex flex-col justify-start items-center">
                 <div className="flex flex-col gap-6">
                   <div className="flex items-baseline">
@@ -38,7 +38,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex-1 flex justify-center items-center">
-                <Image src="/Solvang1.JPG" className="w-[500px] h-[500px] object-cover" width={500} height={500} alt="Profile Picture" /> 
+                <PhotoCollage /> 
               </div>
             </section>
         </Reveal>

@@ -1,6 +1,5 @@
 "use client"
 import { useState } from "react"
-import Image from "next/image"
 import ProjectCard from "./ProjectCard"
 import { Project } from "@/data/projects"
 
