@@ -55,7 +55,7 @@ export default function PhotoCollage() {
             }}
             className={`absolute left-1/2 top-1/2 w-[280px] h-[360px] overflow-hidden rounded-xl border
               transition-[transform,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
-              motion-reduce:transition-none
+              motion-reduce:transition-none select-none
               ${isActive
                 ? "border-[#7DA99E]/60 shadow-2xl shadow-black/60 cursor-default"
                 : "border-white/10 shadow-lg shadow-black/40 cursor-pointer hover:brightness-110"}`}
@@ -67,6 +67,7 @@ export default function PhotoCollage() {
               sizes="280px"
               priority={i === 0}
               className="object-cover"
+              draggable={false}
             />
           </button>
         );
