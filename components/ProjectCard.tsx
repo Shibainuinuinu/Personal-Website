@@ -8,13 +8,13 @@ export default function ProjectCard({ title, image, description, tech, link } : 
 
             <div className="relative w-full h-50">
                 <Image src={image} alt={title} fill className="object-cover" />            
-                <a className="absolute top-2 right-2" href={link} target="_blank">
+                <a className="absolute top-2 right-2" href={link} target="_blank" rel="noopener noreferrer">
                     <ExportIcon />
                 </a>
 
             </div>
             <div className="flex flex-1 flex-col justify-start gap-3 bg-surface-raised p-5">
-                <h1 className="text-xl font-semibold text-text">{title}</h1>
+                <h3 className="text-xl font-semibold text-text">{title}</h3>
                 <p className="text-sm text-muted leading-relaxed">{description}</p>
                 <div className="flex gap-2 mt-auto">
                 {tech.map((item) => {

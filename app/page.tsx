@@ -1,4 +1,3 @@
-"use client";
 import Type from "@/components/Type"
 import Carousel from "@/components/Carousel"
 import { projects } from "@/data/projects"
@@ -7,14 +6,9 @@ import SkillBoard from "@/components/SkillBoard";
 import { skillCategories } from "@/data/skills";
 import Reveal from "@/components/Reveal";
 import PhotoCollage from "@/components/PhotoCollage";
+import ScrollButton from "@/components/ScrollButton";
 
 export default function Home() {
-  const scrollIntoView = (id : string) => {
-    document.getElementById(id)?.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
-
   return (
     <main className="min-h-screen w-full text-text flex flex-col">
       <div className="flex-1 mb-30">
@@ -23,18 +17,15 @@ export default function Home() {
               <div className="flex-1 flex flex-col justify-start items-center">
                 <div className="flex flex-col gap-6">
                   <div className="flex items-baseline">
-                    <span className="text-5xl">
+                    <h1 className="text-5xl">
                       <Type text="Hi, I'm Kelvin" time={160} wait={1500} />
-                    </span>
+                    </h1>
                     <span className="animate-pulse bold text-5xl">|</span>
                   </div>
                   <p className="max-w-prose text-left text-muted">
                     Third-year Computer Science student at UC Santa Barbara specializing in AI/ML and Fullstack development. 
                   </p>
-                  <div className="flex gap-5">
-                    <button onClick={() => scrollIntoView('projects')} className="bg-accent transition-all duration-200 hover:opacity-85 px-5 py-2.5 rounded-md text-surface text-sm transition-all duration-200">View Projects</button>
-                    <button onClick={() => scrollIntoView('contacts')} className="hover:border-accent hover:text-accent px-5 py-2.5 rounded-md text-muted border-hairline text-subtle border-2 text-sm transition-all duration-200">Contact Me</button>
-                  </div>
+                  <ScrollButton /> 
                 </div>
               </div>
               <div className="flex-1 flex justify-center items-center">
@@ -44,25 +35,25 @@ export default function Home() {
         </Reveal>
         <Reveal>
           <section id="projects" className="flex flex-col justify-center items-center mt-60">
-            <div className="text-5xl mt-10 mb-30">
+            <h2 className="text-5xl mt-10 mb-30">
               Projects
-            </div>
-            <Carousel Items={projects} />
+            </h2>
+            <Carousel items={projects} />
           </section>
         </Reveal>
  
     <Reveal>
           <section className="mt-60 flex flex-col justify-center items-center">
-            <div className="text-5xl mt-10 mb-30 text-center">
+            <h2 className="text-5xl mt-10 mb-30 text-center">
               Skills
-            </div>
+            </h2>
             <SkillBoard skillCategories={skillCategories}/>
           </section>
     </Reveal>
       </div>
       <Reveal>
       <div id="contacts" className="flex flex-col justify-center items-center w-full mb-20">
-        <span className="text-4xl mb-10 mt-30">Contact Me</span> 
+        <h2 className="text-4xl mb-10 mt-30">Contact Me</h2>
         <ContactForm />
       </div>
       </Reveal>

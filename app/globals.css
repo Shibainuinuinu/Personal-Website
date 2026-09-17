@@ -25,13 +25,6 @@
   --font-mono: var(--font-jetbrains), monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 /* Cleaner baseline that lets Tailwind handle the typography families smoothly */
 body {
   color: var(--foreground);

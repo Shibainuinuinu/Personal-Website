@@ -25,7 +25,7 @@ export default function Type( { text, time, wait } : { text: string, time: numbe
 
     id = setTimeout(tick, time)
     return () => clearTimeout(id)
-  }, [text, time]);
+  }, [text, time, wait]);
 
   return <span>{display}</span>
 }
