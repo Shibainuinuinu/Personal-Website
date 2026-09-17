@@ -5,13 +5,14 @@ import { Redis } from "@upstash/redis";
 
 
 const resend = new Resend(process.env.RESEND_API_KEY)
+const ratelimit = new Ratelimit({
+    redis: Redis.fromEnv(),
+    limiter: Ratelimit.slidingWindow(10, '1 m'), 
+    ephemeralCache: new Map(), 
+});
 
 export async function POST(request: Request) {
     try {
-        const ratelimit = new Ratelimit({
-            redis: Redis.fromEnv(),
-            limiter: Ratelimit.slidingWindow(10, '1 m')
-        });
 
         const ip = request.headers.get("x-forwarded-for")?.split(",")[0] ?? "unknown";
         const { success } = await ratelimit.limit(ip)

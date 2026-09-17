@@ -7,7 +7,7 @@ in-progress project detail pages feature.
 
 ## Part 1 — Refactors to do
 
-### Done
+### Bugs identified and fixed
 
 - `Reveal.tsx` — dynamic `duration` now applied via inline `style`, ref properly typed.
   Bidirectional fade (re-hiding on scroll-away) confirmed intentional, left as-is.
@@ -41,25 +41,16 @@ in-progress project detail pages feature.
 - Placeholder SVG paths in `data/projects.ts`, `route.ts`'s inline email template, and
   `PhotoCollage.tsx`'s inline `photos`/`SLOTS`/`BACK_SCALE` and `SLOTS[slotIndex]`
   bounds are all intentional/accepted as-is — not planned work.
+- `route.ts` — `Ratelimit` (and its `ephemeralCache`) moved to module scope alongside the
+  `resend` singleton, instead of being reconstructed on every request.
 
-### A. Bugs that are actively broken
-
-*(none remaining — see Done above)*
-
-### B. Structural
-
-**7. `route.ts:11` — Ratelimit is constructed per request.** Move it to module scope
-alongside the `resend` singleton on line 7, and add an ephemeral cache.
-
-**13. `ProjectCard.tsx:11`** — ~~`target="_blank"` without `rel="noopener noreferrer"`~~ —
-done. `link` is optional in the type, so `href` can still be `undefined` — deferred, not
-fixing right now.
-
-### C. Housekeeping
+### Housekeeping
 
 - No `.env.example` documenting the four required env vars
 - Contact emails send from Resend's `onboarding@resend.dev` sandbox, which only delivers
   to the account owner — needs a verified domain for real use
+- `ProjectCard.tsx:11` — `link` is optional in the type, so `href` can still be
+  `undefined` — deferred, not fixing right now.
 
 ---
 
