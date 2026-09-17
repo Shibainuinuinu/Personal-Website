@@ -1,21 +1,18 @@
 "use client";
 import { useState, useEffect } from "react";
 
-export default function Elipiical({ text, time, status} : {text : string, time: number, status: string}) { 
+export default function Ellipsis({ text, time} : {text : string, time: number}) {
     const [display, setDisplay] = useState("");
 
     useEffect(() => {
-        if (status == "submitting") {
-            return
-        }
+        let i = 0;
         const id = setInterval(() => {
-            let i = 0;
-            setDisplay( display.length > text.length ? "" : text.slice(0, i));
+            setDisplay(text.slice(0, i % (text.length + 1)));
             i++; 
 
         }, time)
         return () => clearInterval(id)
-    }, [display])
+    }, [])
     return (
         <span>
             {display}

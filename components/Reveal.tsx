@@ -1,8 +1,8 @@
 "use client";
 import {useEffect, useRef, useState } from "react";
 
-export default function Reveal({ children, duration = 1500 } : {children : React.ReactNode, duration?: number}) { 
-    const ref = useRef(null);
+export default function Reveal({ children, duration = "1500" } : {children : React.ReactNode, duration?: string}) { 
+    const ref = useRef<HTMLDivElement>(null);
     const [inView, setView] = useState(false);
 
     useEffect(() => {
@@ -21,7 +21,7 @@ export default function Reveal({ children, duration = 1500 } : {children : React
     }, []);
 
     return (
-        <div ref={ref} className={`transition-all duration-${duration} ${inView ? `opacity-100` : `opacity-0`}`}>
+        <div ref={ref} style={{transitionDuration: duration + "ms"}} className={`transition-all ${inView ? `opacity-100` : `opacity-0`}`}>
             {children}
         </div>
     )

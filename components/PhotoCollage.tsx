@@ -8,12 +8,12 @@ export type Photo = {
 };
 
 export const photos: Photo[] = [
-    { id: "Solvang", src: "/Solvang1.jpg", alt: "Me in Solvang" },
-    { id: "Beach", src: "/KelvinBeach.jpg", alt: "Sunset at Campus Point" },
+    { id: "Solvang", src: "/Solvang1.JPG", alt: "Me in Solvang" },
+    { id: "Beach", src: "/KelvinBeach.JPG", alt: "Sunset at Campus Point" },
     { id: "Lake Tahoe", src: "/LakeTahoe.jpeg", alt: "Lake Tahoe" },
-    { id: "White Tee", src: "/KelvinWhiteTee.jpg", alt: "Senior Picnic Day" },
-    { id: "Solvang 2", src: "/Solvang3.jpg", alt: "Looking Afar" },
-    { id: "Solvang 3", src: "/Solvang2.jpg", alt: "Me in Solvang Again" },
+    { id: "White Tee", src: "/KelvinWhiteTee.JPG", alt: "Senior Picnic Day" },
+    { id: "Solvang 2", src: "/Solvang3.JPG", alt: "Looking Afar" },
+    { id: "Solvang 3", src: "/Solvang2.JPG", alt: "Me in Solvang Again" },
 ];   
 
 
@@ -57,7 +57,7 @@ export default function PhotoCollage() {
               transition-[transform,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
               motion-reduce:transition-none select-none
               ${isActive
-                ? "border-[#7DA99E]/60 shadow-2xl shadow-black/60 cursor-default"
+                ? "border-accent/60 shadow-2xl shadow-black/60 cursor-default"
                 : "border-white/10 shadow-lg shadow-black/40 cursor-pointer hover:brightness-110"}`}
           >
             <Image

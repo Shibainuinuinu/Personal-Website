@@ -6,7 +6,7 @@ export default function Type( { text, time, wait } : { text: string, time: numbe
 
   useEffect(() => {
     let i = 0;
-    let deleting : Boolean = false;
+    let deleting : boolean = false;
     let id : ReturnType<typeof setTimeout>;
 
     const tick = () => {

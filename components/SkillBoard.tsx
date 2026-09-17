@@ -4,7 +4,7 @@ import SkillCard from "@/components/SkillCard";
 
 export default function SkillBoard( { skillCategories }  : { skillCategories : SkillCategory[] }) {
     return (
-        <div className="flex flex-col gap-15 w-[80vw] text-[#5a6278]">
+        <div className="flex flex-col gap-15 w-[80vw] text-subtle">
             {
                 skillCategories.map(({category, skills} : {category : string, skills: Skill[]}) => {
                     return (

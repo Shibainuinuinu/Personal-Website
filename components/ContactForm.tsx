@@ -1,10 +1,10 @@
 "use client";
 import { useState, ChangeEvent, SubmitEvent } from "react"
-import Elliptical from "./Elipitcal";
+import Ellipsis from "./Ellipsis";
 
 export default function ContactForm() {
     const [form, setForm] = useState({ name: "", email: "", message: ""})
-    const [status, setStatus] = useState("idle")
+    const [status, setStatus] = useState<"idle" | "submitting" | "sent" | "error">("idle")
 
     const handleChange = (e : ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setForm({...form, [e.target.name] : e.target.value})
@@ -78,10 +78,10 @@ export default function ContactForm() {
             <button
             type="submit"
             disabled={status == "submitting"}
-            className="bg-[#7DA99E] hover:opacity-85 text-[#0B0D13] font-medium rounded-md px-4 py-3 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="bg-accent hover:opacity-85 text-surface font-medium rounded-md px-4 py-3 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             >
                 {status === "submitting" ? (
-                <>Sending<Elliptical status={status} text={"..."} time={10} /></>
+                <>Sending<Ellipsis text={"..."} time={300} /></>
                 ) : "Send Message"}
             </button>
 
