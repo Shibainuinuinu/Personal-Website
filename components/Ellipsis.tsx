@@ -12,7 +12,7 @@ export default function Ellipsis({ text, time} : {text : string, time: number}) 
 
         }, time)
         return () => clearInterval(id)
-    }, [])
+    }, [text, time])
     return (
         <span>
             {display}
