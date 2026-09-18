@@ -22,6 +22,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col bg-surface">
         <Nav />
         {children}
+        <footer className="border-t border-white/20 py-6 flex justify-start">
+          <span className="ml-10">
+            Kelvin Fang 
+          </span>
+        </footer>
       </body>
     </html>
   );
