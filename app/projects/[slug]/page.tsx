@@ -53,16 +53,28 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
             <div className="relative w-full aspect-video rounded-md border border-hairline overflow-hidden bg-surface-alt">
               <Image src={project.image} alt={project.title} fill className="object-cover" />
             </div>
-            {project.link && (
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="self-start px-4 py-2 rounded-md border border-hairline text-sm hover:border-accent hover:text-accent transition-colors"
-              >
-                View Code ↗
-              </a>
-            )}
+            <div className="flex flex-wrap gap-3">
+              {project.projectLink && (
+                <a
+                  href={project.projectLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="self-start px-4 py-2 rounded-md border border-hairline text-sm hover:border-accent hover:text-accent transition-colors"
+                >
+                  View Project ↗
+                </a>
+              )}
+              {project.codeLink && (
+                <a
+                  href={project.codeLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="self-start px-4 py-2 rounded-md border border-hairline text-sm hover:border-accent hover:text-accent transition-colors"
+                >
+                  View Code ↗
+                </a>
+              )}
+            </div>
           </div>
 
           <div className="flex-1 flex flex-col gap-10">

@@ -1,9 +1,5 @@
 import Link from "next/link"
 
-/**
- * Rendered whenever notFound() is called from this route segment, or when
- * someone visits a /projects/<slug> URL that doesn't match a real project.
- */
 export default function ProjectNotFound() {
   return (
     <main className="min-h-screen w-full text-text flex flex-col items-center justify-center gap-6">
