@@ -56,7 +56,7 @@ No `src/`, no `lib/`, no `middleware.ts`, no test runner, no CI.
 first `x-forwarded-for` IP) gating a Resend email send.
 
 Env vars, all in `.env.local` (gitignored, no `.env.example` yet):
-`RESEND_API_KEY`, `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN`, `CONTACT_EMAIL`
+`RESEND_API_KEY`
 
 The sender is Resend's `onboarding@resend.dev` sandbox domain, which only delivers to
 the Resend account owner. A verified domain is needed for real delivery.

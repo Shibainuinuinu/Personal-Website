@@ -29,9 +29,8 @@ npm run dev
 
 Then open [http://localhost:3000](http://localhost:3000).
 
-The contact form needs a few environment variables in a `.env.local` file to actually
-send email (`RESEND_API_KEY`, `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN`,
-`CONTACT_EMAIL`). Without them, the rest of the site still works fine.
+The contact form needs `RESEND_API_KEY` in a `.env.local` file to actually send email.
+Without it, the rest of the site still works fine.
 
 ## Contact
 

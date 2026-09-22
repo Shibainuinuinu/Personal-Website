@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
 
-const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(request: Request) {
     try {
@@ -14,10 +13,14 @@ export async function POST(request: Request) {
             return NextResponse.json({ error: "Missing fields"}, {status : 400})
         }
         
-        const to = process.env.CONTACT_EMAIL
-        if (!to) {
+        const to = "kelvinfang15@gmail.com"
+        const apiKey = process.env.RESEND_API_KEY
+        if (!apiKey) {
+            console.error("Contact route misconfigured: RESEND_API_KEY is not set")
             return NextResponse.json({ error: "Something went wrong" }, { status: 500 })
         }
+
+        const resend = new Resend(apiKey)
 
         const escapeHtml = (str: string) =>
         str
