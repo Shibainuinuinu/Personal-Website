@@ -85,7 +85,7 @@ export default function ContactForm() {
 
             {status === "error" && (
             <div aria-live="polite" className="bg-red-500/10 border border-red-500/30 text-red-400 rounded-md px-4 py-3 text-sm">
-                {`${errorMessage} Please try again, or email me directly at ${process.env.CONTACT_EMAIL
+                {`${errorMessage} Please try again, or email me directly at ${process.env.NEXT_PUBLIC_CONTACT_EMAIL
 }`}
             </div>
             )}
